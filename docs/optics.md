@@ -10,7 +10,7 @@ Tofu contains its own optics library with some notable features:
 Hierarchy
 ---------
 
-[![Optics Hierarchy](./optics-hierarchy.png)]
+![Optics Hierarchy](https://github.com/TinkoffCreditSystems/tofu/raw/master/docs/optics-hierarchy.png)
 
 Intuition
 ---------
