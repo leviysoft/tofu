@@ -50,7 +50,7 @@ object Dependencies {
     // Compile time only
     val macroParadise = "2.1.1"
 
-    val simulacrum = "1.0.1"
+    val simulacrum = "0.5.4"
 
     val kindProjector = "0.11.3"
 
@@ -92,8 +92,8 @@ object Dependencies {
   val log4Cats         = "org.typelevel"              %% "log4cats-core"           % Version.log4Cats
 
   // Compile-time only
-  val macroParadise    = "org.scalamacros" % "paradise"           % Version.macroParadise cross CrossVersion.patch
-  val kindProjector    = "org.typelevel"  %% "kind-projector"     % Version.kindProjector cross CrossVersion.patch
-  val simulacrum       = "org.typelevel"  %% "simulacrum"         % Version.simulacrum
-  val betterMonadicFor = "com.olegpy"     %% "better-monadic-for" % Version.betterMonadicFor
+  val macroParadise         = "org.scalamacros" % "paradise"                        % Version.macroParadise cross CrossVersion.patch
+  val kindProjector         = "org.typelevel"  %% "kind-projector"                  % Version.kindProjector cross CrossVersion.patch
+  val simulacrumAnnotations = "org.typelevel"  %% "simulacrum-scalafix-annotations" % Version.simulacrum
+  val betterMonadicFor      = "com.olegpy"     %% "better-monadic-for"              % Version.betterMonadicFor
 }

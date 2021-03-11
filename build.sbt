@@ -337,7 +337,8 @@ lazy val macros = Seq(
 )
 
 lazy val simulacrumOptions = Seq(
-  libraryDependencies += simulacrum % Provided,
+  libraryDependencies += simulacrumAnnotations          % Provided,
+  scalafixDependencies in ThisBuild += "org.typelevel" %% "simulacrum-scalafix" % Version.simulacrum,
   pomPostProcess := { node =>
     import scala.xml.transform.{RewriteRule, RuleTransformer}
 
@@ -345,8 +346,10 @@ lazy val simulacrumOptions = Seq(
       override def transform(node: xml.Node): Seq[xml.Node] = node match {
         case e: xml.Elem
             if e.label == "dependency" &&
-              e.child.exists(child => child.label == "groupId" && child.text == simulacrum.organization) &&
-              e.child.exists(child => child.label == "artifactId" && child.text.startsWith(s"${simulacrum.name}_")) =>
+              e.child.exists(child => child.label == "groupId" && child.text == simulacrumAnnotations.organization) &&
+              e.child.exists(child =>
+                child.label == "artifactId" && child.text.startsWith(s"${simulacrumAnnotations.name}_")
+              ) =>
           Nil
         case _ => Seq(node)
       }
