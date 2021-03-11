@@ -395,3 +395,7 @@ lazy val publishSettings = Seq(
 
 addCommandAlias("fmt", "all tofu/scalafmtSbt tofu/scalafmtAll")
 addCommandAlias("checkfmt", "all tofu/scalafmtSbtCheck tofu/scalafmtCheckAll")
+addCommandAlias(
+  "simulacrum",
+  "all tofu/scalafix AddSerializable; tofu/scalafix AddImplicitNotFound; tofu/scalafix TypeClassSupport"
+)
